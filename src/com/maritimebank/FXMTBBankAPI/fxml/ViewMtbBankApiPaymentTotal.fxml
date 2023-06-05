@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import ru.inversion.bicomp.tablecolumn.JInvTableColumnAccountNum?>
+<VBox prefHeight="400.0" prefWidth="800.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.maritimebank.FXMTBBankAPI.ViewMtbBankApiPaymentTotalController">
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints halignment="LEFT" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+        </columnConstraints>
+        <JInvToolBar fx:id="toolBar"/>
+        <JInvToolBar  nodeOrientation="RIGHT_TO_LEFT" GridPane.columnIndex="1">
+            <JInvCalendar fx:id="PERIOD_END" nodeOrientation="LEFT_TO_RIGHT"/>
+            <JInvLabel text="%LABEL.PERIOD.END" nodeOrientation="LEFT_TO_RIGHT"/>
+            <JInvCalendar fx:id="PERIOD_START" nodeOrientation="LEFT_TO_RIGHT"/>
+            <JInvLabel text="%LABEL.PERIOD.START" nodeOrientation="LEFT_TO_RIGHT"/>
+        </JInvToolBar>
+    </GridPane>
+    <JInvTabPane VBox.vgrow="ALWAYS">
+        <Tab text="%TAB.TOTAL">
+            <JInvTable fx:id="MTB_BANK_API_PAYMENT_TOTAL" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                <columns>
+                    <JInvTableColumn fx:id="CTRNCLIENT_NAME" text="%CTRNCLIENT_NAME" fieldName="CTRNCLIENT_NAME"
+                                     prefWidth="300.0"/>
+                    <JInvTableColumn fx:id="OP_TYPE" text="%OP_TYPE" fieldName="OP_TYPE"/>
+                    <JInvTableColumn fx:id="TRN_CNT" text="%TRN_CNT" fieldName="TRN_CNT"/>
+                    <JInvTableColumnBigDecimal fx:id="TRN_SUM" text="%TRN_SUM" fieldName="TRN_SUM"/>
+                    <JInvTableColumnBigDecimal fx:id="COM_SUM" text="%COM_SUM" fieldName="COM_SUM"/>
+                    <JInvTableColumnBigDecimal fx:id="BANK_SUM" text="%BANK_SUM" fieldName="BANK_SUM"/>
+                </columns>
+                <VBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0"/>
+                </VBox.margin>
+            </JInvTable>
+        </Tab>
+        <Tab text="%TAB.DETAIL">
+
+            <JInvTable fx:id="MTB_BANK_API_PAYMENT_DETAIL" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                <columns>
+                    <JInvTableColumnDate fx:id="DBACSTAMP" text="%DBACSTAMP" fieldName="DBACSTAMP"
+                                         dateFormat="DATE_TIME_DETAIL"/>
+                    <JInvTableColumn fx:id="OP_TYPE_DETAIL" text="%OP_TYPE" fieldName="OP_TYPE"/>
+                    <JInvTableColumn fx:id="RCVNAME" text="%RCVNAME" fieldName="RCVNAME" prefWidth="300.0"/>
+                    <JInvTableColumn fx:id="RCVINN" text="%RCVINN" fieldName="RCVINN" maxWidth="100.0"/>
+                    <JInvTableColumn fx:id="CNAMEP" text="%CNAMEP" fieldName="CNAMEP" prefWidth="300.0"/>
+                    <JInvTableColumn fx:id="CBIC" text="%CBIC" fieldName="CBIC" maxWidth="100"/>
+                    <JInvTableColumnAccountNum fx:id="RCVACC" text="%RCVACC" fieldName="RCVACC" prefWidth="300.0"/>
+                    <JInvTableColumnBigDecimal fx:id="RCVSUM" text="%RCVSUM" fieldName="RCVSUM"/>
+                    <JInvTableColumn fx:id="CBAPORDID" text="%CBAPORDID" fieldName="CBAPORDID"/>
+                    <JInvTableColumnDate fx:id="D_CREATE" text="%D_CREATE" fieldName="D_CREATE"
+                                         dateFormat="DATE_TIME_DETAIL"/>
+                    <JInvTableColumnDate fx:id="DTRNTRAN" text="%DTRNTRAN" fieldName="DTRNTRAN"
+                                         dateFormat="DATE_TIME_DETAIL"/>
+                    <JInvTableColumn fx:id="DOCNUM" text="%DOCNUM" fieldName="DOCNUM"/>
+                    <JInvTableColumnDate fx:id="DOCDATE" text="%DOCDATE" fieldName="DOCDATE"/>
+                    <JInvTableColumn fx:id="STATUS" text="%STATUS" fieldName="STATUS"/>
+                    <JInvTableColumn fx:id="CBAPERR" text="%CBAPERR" fieldName="CBAPERR"/>
+                </columns>
+                <VBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0"/>
+                </VBox.margin>
+            </JInvTable>
+        </Tab>
+    </JInvTabPane>
+</VBox>

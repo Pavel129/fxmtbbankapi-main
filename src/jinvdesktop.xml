@@ -1,0 +1,5 @@
+<JInvDesktop>
+  <startclass description="MTB. Банк API>" name="com.maritimebank.FXMTBBankAPI.BankApiMain" startup="true">
+    <method description="MTB. Банк API Статистика" mode="NONE">showViewMtbBankApiPaymentTotal</method>
+  </startclass>
+</JInvDesktop>
